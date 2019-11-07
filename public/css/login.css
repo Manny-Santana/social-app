@@ -7,10 +7,13 @@ body{
     margin: 0 auto;
 }
 .container {
+    display: flex;
+    justify-content: center;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 50px;
 }
 label{
     display: inline-block;
@@ -24,6 +27,16 @@ input{
 button{
     margin: 5px;
 }
+img{
+    width: 400px;
+}
+.center{
+    text-align: center;
+}
+.form {
+    flex-direction: column;
+}
+
 /* .form-control{
     display: block;
     width: 100%;
@@ -42,3 +55,21 @@ button{
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 } */
+
+@media screen and (max-width: 500px){
+    body{
+        overflow: hidden;
+    }
+    .container{
+        flex-direction: column;
+        margin-top: 10px;
+        margin: 0 auto;
+    }
+    img{
+        width: 300px;
+    }
+    header{
+        text-align: center;
+    }
+    
+}

@@ -1,7 +1,49 @@
+
+/* body{
+    /* height: 100vh;
+    overflow: hidden; */
+/* }  */
 .container{
     text-align: center;
-    background: rgb(209, 209, 209);
+    background:rgb(255, 255, 255);
     border-radius: 10px;
     padding: 30px;
-    margin-top: 25vh;
+    margin-top: 5px;
+}
+#brand { 
+    height: 90%;
+    max-width: 70px;
+} 
+.navbar {
+   background: rgb(255, 255, 255);
+   border-radius: 0px;
+   height: 10vh;
+   border-bottom: solid 1px lightgrey;
+   margin: 0px 15px 15px 15px;
+}
+.navbar-brand{
+    padding: 0;
+    height: 100%;
+    max-width: 70px;
+}
+
+ 
+
+#main-logo{
+     height: 300px;
+    width: 300px;
+}
+.container{
+    height: 80vh;
+    padding:20px
+}
+
+
+/* header {
+    
+    2589ff
+} */
+
+@media screen and (max-width: 500px){
+
 }

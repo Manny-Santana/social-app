@@ -89,7 +89,7 @@ app.get("/seedPost", (req, res) => {
 //==========================
 //ROUTE CONTROLLERS
 //==========================
-app.use("/login", sessionController);
+app.use("/user", sessionController);
 
 //==========================
 // LISTENER
