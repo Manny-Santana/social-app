@@ -1,8 +1,8 @@
 module.exports = {
-  username: "FirstFriend",
+  username: "TEST",
   password: "admin",
-  fName: "Manny",
-  lName: "Santana",
+  fName: "Mannytest",
+  lName: "Santanatest",
   posts: [],
   friendPosts: [],
   friends: [],

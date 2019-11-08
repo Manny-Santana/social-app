@@ -6,7 +6,7 @@ const userSchema = new Schema(
   {
     username: { type: String, unique: true, required: true },
     password: String,
-    img: String,
+    img: { type: String, default: "https://i.imgur.com/vjoDZt8.gif" },
     fName: String,
     lName: String,
     posts: [Post],

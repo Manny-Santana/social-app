@@ -21,12 +21,29 @@
 
         <div class="container form">
 
-            <form action="" class="form-signin">
+            <form action="/user/create"  method="POST" class="form-signin">
                 <h3 class="form-signin-heading">Please Create an Account</h3> 
+
                 <label for="username" class="sr-only">User Name</label>
-                <input type="text" id="username" class="form-control" placeholder="User Name" required autofocus>
+                <input type="text" name="username" id="username" class="form-control" placeholder="User Name" required autofocus>
+               
                 <label for="password" class="sr-only">Password</label>
-                <input type="password" id="password" class="form-control" placeholder="Password" required>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                
+                <label for="fName" class="sr-only">First Name</label>
+                <input type="text" name="fName" id="fName" class="form-control" placeholder="First Name" required>
+                
+                <label for="lName" class="sr-only">Last Name</label>
+                <input type="text" name="lName" id="lName" class="form-control" placeholder="Last Name" required>
+                
+                <label for="img" class="sr-only">Avatar</label>
+                <input type="text" name="img" id="img" class="form-control" placeholder="Link to Image Avatar" >
+                
+                <label for="location" class="sr-only">Location</label>
+                <input type="text" name="location" id="location" class="form-control" placeholder="Location eg: CT, NY, New York City" required>
+                
+                
+                
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             </form>
             <div class="center">
