@@ -14,6 +14,7 @@ const seed = require("./models/seed.js");
 const User = require("./models/user.js");
 const Post = require("./models/post.js");
 const bcrypt = require("bcrypt");
+const userController = require("./controllers/user.js");
 
 //DB setup==================
 //
@@ -90,6 +91,7 @@ app.get("/seedPost", (req, res) => {
 //ROUTE CONTROLLERS
 //==========================
 app.use("/session", sessionController);
+app.use("/user", userController);
 
 //==========================
 // LISTENER
