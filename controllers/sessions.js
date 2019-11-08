@@ -27,6 +27,9 @@ router.post("/create", (req, res) => {
     req.body.password,
     bcrypt.genSaltSync(10)
   );
+  if (!req.body.img) {
+    req.body.img = "https://i.imgur.com/vjoDZt8.gif";
+  }
   //create the user
   User.create(req.body, (err, createdUser) => {
     if (err) console.log(err.message); //handle the error

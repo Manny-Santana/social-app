@@ -1,3 +1,4 @@
+// @ts-nocheck
 const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
@@ -18,13 +19,16 @@ router.get("/:id", (req, res) => {
           '<h1> Could not find the User</h1> <a href="/" ><h2>Try Again </h2></a>'
         );
       } else {
-        res.render("user/userHome.ejs", { foundUser });
+        console.log(foundUser.img);
+        //redirect to self page view
+        res.render("user/userHome.ejs", { User: foundUser });
       }
     });
   } else {
     User.findById(req.params.id, (err, foundUser) => {
       if (err) console.log(err.message);
-      res.render("user/userPage.ejs", { foundUser });
+      //render stranger page view
+      res.render("user/userPage.ejs", { User: foundUser });
     });
   }
 });

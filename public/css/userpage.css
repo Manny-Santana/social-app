@@ -1,0 +1,56 @@
+#brand { 
+    height: 80%;
+    max-width: 70px;
+} 
+.navbar {
+   background: rgb(255, 255, 255);
+   border-radius: 0px;
+   height: 5vh;
+   border-bottom: solid 1px lightgrey;
+   margin: 0px 15px 15px 15px;
+}
+.navbar-brand{
+    padding: 0;
+    height: 100%;
+    max-width: 70px;
+}
+.img-container{
+    border: 1px solid black;
+    height: 250px;
+    width: 100%;
+}
+
+img{
+    height: 50%;
+
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.userinfo{
+    flex: 1;
+    width: 36%;
+    height: 100vh;
+    margin: 10px;
+    border: solid 1px black;
+
+}
+
+main{
+    flex: 2;
+    width: 33%;
+    height: 100vh;
+    margin: 10px;
+    border: solid 1px blue;
+}
+.friendposts{
+    flex: 1;
+    width: 33%;
+    height: 100vh;
+    margin: 10px;
+    border: solid 1px blue;
+}

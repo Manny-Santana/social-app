@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include('../partials/bootstrap') %>
+    <link rel="stylesheet" href="/css/userpage.css">
     <title>Muse</title>
 </head>
 <body>
-    <h1> CURRENT USER HOME PAGE </h1>
-    <h1><%=foundUser.fName%></h1>
+    <!-- <h1> CURRENT USER HOME PAGE </h1>
+    -->
+
+    <div class="header">
+
+            <nav class="navbar sticky-top">
+                <a href="/user/<%=User._id%>" class="navbar-brand">
+                    <img id="brand" src="/images/MUSE.png" alt="logo">
+                    
+                 </a>
+             </nav>
+        </div>
+        <div class="container">
+
+            <aside class="userinfo">
+                <div class="img-container">
+                    <div class="username">
+                        <h4><%= User.username%></h4>
+                    </div>
+                    <img class="img-fluid" src='<%=User.img%>' alt="image">
+                    
+                </div>
+            </aside>
+            <main>
+                
+            </main>
+            <aside class="friendposts">
+
+            </aside>
+        </div>
 </body>
 </html>
