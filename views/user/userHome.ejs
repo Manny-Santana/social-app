@@ -31,9 +31,35 @@
                     <img class="img-fluid" src='<%=User.img%>' alt="image">
                     
                 </div>
+                <div class="name-cont">
+                    <h4 class="name-text"><%= User.fName + ' ' + User.lName%></h4>
+                </div>
+                <div class="interests">
+                    <h5>Interests: </h5>
+                    <p class="interest-text">
+                        <%= User.interests %>
+                    </p>
+                </div>
             </aside>
             <main>
-                
+                <div class="form">
+                    <form action="/user/<%=User._id%>/post" method="post">
+                        <small class="form-text text-muted prompt">What's on your mind?</small>
+                    <input type="text" name='post' class="form-control" placeholder="Share Your Thoughts">
+                    <input type='submit' class="btn btn-primary" >
+                    </form>
+                </div>
+                <div class="userposts">
+
+                <% for(let i= User.posts.length-1; i > 0; i--){ %>
+                    <div class="post-comp">
+                        <img src="<%= User.posts[i].creatorImg%>" class="usr-img" alt="user">
+                        <p class="post-txt"><%= User.posts[i].content %></p>
+                        <small class="text-muted">Posted:  <%= User.posts[i].date %></small>
+                    </div>
+                <% }; %>
+
+                </div>
             </main>
             <aside class="friendposts">
 

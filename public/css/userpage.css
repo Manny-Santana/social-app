@@ -8,6 +8,7 @@
    height: 5vh;
    border-bottom: solid 1px lightgrey;
    margin: 0px 15px 15px 15px;
+   box-shadow: 0 8px 6px -6px lightgray;
 }
 .navbar-brand{
     padding: 0;
@@ -15,42 +16,101 @@
     max-width: 70px;
 }
 .img-container{
-    border: 1px solid black;
+   
     height: 250px;
     width: 100%;
 }
 
 img{
     height: 50%;
+    border-radius: 50%;
+    border: solid 2px whitesmoke;
 
 }
 .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background: white;
 
 }
 
 .userinfo{
     flex: 1;
-    width: 36%;
-    height: 100vh;
+    
+    height: fit-content;
     margin: 10px;
-    border: solid 1px black;
+    
+    background: linear-gradient(rgb(241, 240, 240), rgb(235, 233, 233));
+    box-shadow: 8px 8px 8px rgb(233, 233, 233);
+    border-radius: 12px;
+    padding: 4px;
+    transition: 0.3s ease;
+}
+.userinfo:hover{
+    box-shadow: 8px 8px 8px rgb(184, 184, 184);
 
 }
 
 main{
-    flex: 2;
+    flex: 3;
     width: 33%;
-    height: 100vh;
+    height: 90vh;
     margin: 10px;
-    border: solid 1px blue;
+    border: solid 2px whitesmoke;
+    border-radius: 12px;
 }
 .friendposts{
-    flex: 1;
-    width: 33%;
-    height: 100vh;
+    flex: 2;
+    height: 90vh;
     margin: 10px;
-    border: solid 1px blue;
+    border: solid 2px whitesmoke;
+    border-radius: 12px;
+}
+.username{
+    text-align: center;
+}
+.img-container{
+    text-align: center;
+}
+.interests{
+    padding: 4px;
+}
+.form {
+    padding: 10px;
+    margin: 7px;
+    border-radius: 12px;
+    background: linear-gradient(rgb(241, 240, 240), rgb(235, 233, 233));
+    box-shadow: 0 8px 10px -6px lightgray;
+
+}
+.btn {
+margin: 4px;
+}
+
+.userposts{
+    height: 74vh;
+    overflow-y: scroll;
+}
+.post-comp{
+    background: linear-gradient(rgb(241, 240, 240), rgb(200,200,200));
+    padding: 10px;
+    margin: 15px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px rgb(233, 233, 233);
+    transition: 0.3s ease;
+    background: linear-gradient(rgb(241, 240, 240), rgb(235, 233, 233));
+    
+
+}
+.post-comp:hover{
+    box-shadow: 8px 8px 8px rgb(184, 184, 184);
+
+}
+.usr-img{
+    height: 70px;
+    width: 70px;
+}
+.post-txt{
+    margin: 10px;
 }
