@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include('../partials/bootstrap') %>
+    <link rel="stylesheet" href="/css/friends.css">
+    <title>Muse</title>
+</head>
+<body>
+        <div class="header">
+        
+                <nav class="navbar sticky-top">
+                    <a href="/user/<%=currentUserID%>" class="navbar-brand">
+                        <img id="brand" src="/images/MUSE.png" alt="logo">
+                        
+                     </a>
+        
+                 </nav>
+                 
+            </div>
+
+            <div class="container">
+                <% for(let i=0; i < Users.length; i++){ %>
+                    <div class="friend-comp">
+                        <a href="/user/<%=Users[i]._id %>"><p class="name"><%=Users[i].fName + ' ' + Users[i].lName%></p></a>
+
+                    </div>
+                <% } %>
+
+            </div>
+    
+</body>
+</html>

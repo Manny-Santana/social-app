@@ -59,6 +59,7 @@ main{
     margin: 10px;
     border: solid 2px whitesmoke;
     border-radius: 12px;
+    overflow:hidden;
 }
 .friendposts{
     flex: 2;
@@ -66,12 +67,19 @@ main{
     margin: 10px;
     border: solid 2px whitesmoke;
     border-radius: 12px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 .username{
     text-align: center;
 }
 .img-container{
     text-align: center;
+    
+}
+.img-fluid{
+    
+    margin: 15px;
 }
 .interests{
     padding: 4px;
@@ -113,4 +121,9 @@ margin: 4px;
 }
 .post-txt{
     margin: 10px;
+}
+
+.name-cont, .username{
+    border-bottom: 1px solid lightgrey;
+    padding: 4px;
 }
