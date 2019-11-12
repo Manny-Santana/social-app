@@ -6,6 +6,15 @@ const bcrypt = require("bcrypt");
 const User = require("../models/user");
 const PostModel = require("../models/post");
 
+//=====
+// quick redirect if user logs out and goes to /user/
+router.get("/", (req, res) => {
+  if (req.session.loggedin) {
+    res.redirect("/session/login");
+  } else {
+    res.redirect("/session/login");
+  }
+});
 //==============================
 // FRIENDS PAGE
 //==============================
@@ -24,6 +33,19 @@ router.get("/friends", (req, res) => {
 //===============================
 // SHOW ROUTE
 //===============================
+router.get("/:id/update", (req, res) => {
+  if (req.session.loggedin === true) {
+    User.findById(req.params.id, (err, user) => {
+      if (err) console.log(err.message);
+      res.render("user/update.ejs", {
+        User: user,
+        currentUserID: req.session.UserID
+      });
+    });
+  } else {
+    res.redirect("/session/login");
+  }
+});
 
 router.get("/:id", (req, res) => {
   if (req.params.id === req.session.userID) {
@@ -63,7 +85,7 @@ router.get("/:id", (req, res) => {
 //===========================
 //
 //MAKE POST
-//FIXME: update this route to check if its a friends page and update to friends posts accordingly
+//FIXED: update this route to check if its a friends page and update to friends posts accordingly
 router.post("/:id/post", (req, res) => {
   //first verfiy that the current user is posting on their own page and add to their posts
   //otherwise add
@@ -99,7 +121,7 @@ router.post("/:id/post", (req, res) => {
           const Post = {};
           //pass in all requirements
           Post.creatorID = CurrentUser._id;
-          Post.creatorName = CurrentUser.fName + " " + User.lName;
+          Post.creatorName = CurrentUser.fName + " " + CurrentUser.lName;
           Post.creatorImg = CurrentUser.img;
           Post.content = req.body.post;
           PostModel.create(Post, (err, post) => {
@@ -115,5 +137,55 @@ router.post("/:id/post", (req, res) => {
     }
   }
 });
+
+//=========================
+//UPDATE ROUTES
+//=========================
+
+router.put("/:id", (req, res) => {
+  if (req.params.id === req.session.userID && req.session.loggedin === true) {
+    //if logged in and current user is on their own page, then proceed with update...
+
+    // parse interests and convert it to an array then add each element to the interests array
+    if (req.body.intersts) {
+      const interestStr = req.body.interests;
+      const wordArr = interestStr.split(",");
+      User.findById(req.params.id, (err, user) => {
+        if (err) console.log(err.message);
+        wordArr.forEach(word => {
+          user.interests.push(word);
+        });
+        //erase the interests so they dont interfere or repeat in the overrwriting of the update
+        delete req.body.interests;
+        //now update the other items
+        User.findByIdAndUpdate(
+          req.params.id,
+          req.body,
+          { new: true },
+          (err, moddedUser) => {
+            if (err) console.log(err.message);
+            console.log(moddedUser);
+            res.redirect(`/user/${req.session.userID}`);
+          }
+        );
+
+        user.save();
+      });
+    } else {
+      User.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true },
+        (err, moddedUser) => {
+          if (err) console.log(err.message);
+          console.log(moddedUser);
+          res.redirect(`/user/${req.session.userID}`);
+        }
+      );
+    }
+  }
+});
+
+//=========================
 
 module.exports = router;

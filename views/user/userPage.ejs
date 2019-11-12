@@ -78,7 +78,10 @@
                     <aside class="friendposts">
                             <% for(let i= User.friendPosts.length-1; i > 0; i--){ %>
                                 <div class="post-comp">
-                                    <img src="<%= User.friendPosts[i].creatorImg%>" class="usr-img" alt="user">
+                                    <div class="box">
+                                        <img src="<%= User.friendPosts[i].creatorImg%>" class="usr-img" alt="user">
+                                            <a href="/user/<%= User.friendPosts[i].creatorID%>"><p class="name"><%= User.friendPosts[i].creatorName%></p></a>
+                                    </div>
                                     <p class="post-txt"><%= User.friendPosts[i].content %></p>
                                     <small class="text-muted">Posted:  <%= User.friendPosts[i].date %></small>
                                 </div>

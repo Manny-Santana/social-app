@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <%- include('../partials/bootstrap') %>
+    <link rel="stylesheet" href="/css/update.css">
+    <title>Muse</title>
+</head>
+<body>
+        <div class="header">
+
+                <nav class="navbar sticky-top">
+                    <a href="/user/<%=User._id%>" class="navbar-brand">
+                        <img id="brand" src="/images/MUSE.png" alt="logo">
+                        
+                     </a>
+                     <div class="viewfriends">
+                         <a href="/user/friends" >
+                        
+                            <h5 class="btn btn-primary">View Friends</h5>
+                        </a>
+                     </div>
+                     <div class="update">
+                         <a href="/user/<%= User._id %>/update"><h5 class="btn btn-primary">Update Profile</h5></a>
+                     </div>
+                 </nav>
+            </div>
+
+            <div class="container">
+                <form action="/user/<%=User._id%>?_method=PUT" method="POST" class="form">
+                    <h2 class="form-signin-heading">Update Your Profile</h2> 
+                    
+                    <label for="image" class="sr-only">Image link</label>
+                    <input type="text" name="img" id="img" class="form-control" value="<%= User.img%>"  autofocus>
+                    
+                    <label for="First Name" class="sr-only">First Name</label>
+                    <input type="text" name="fName" id="fName" class="form-control" value="<%=User.fName %>" >
+                    
+                    <label for="First Name" class="sr-only">Last Name</label>
+                    <input type="text" name="lName" id="lName" class="form-control" value="<%=User.lName %>" >
+                    
+                    <label for="Location" class="sr-only">Location</label>
+                    <input type="text" name="location" id="location" class="form-control" value="<%=User.location %>" >
+                    
+                    <label for="Interests" class="sr-only">Location</label>
+                    <input type="text" name="interests" id="interests" class="form-control" placeholder="Write interests seperated by commas" >
+                    
+                    
+                    
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Update Profile</button>
+               
+                </form>
+            </div>
+    
+</body>
+</html>

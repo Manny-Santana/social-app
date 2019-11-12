@@ -9,6 +9,7 @@
    border-bottom: solid 1px lightgrey;
    margin: 0px 15px 15px 15px;
    box-shadow: 0 8px 6px -6px lightgray;
+   display: flex;
 }
 .navbar-brand{
     padding: 0;
@@ -50,6 +51,11 @@ img{
 .userinfo:hover{
     box-shadow: 8px 8px 8px rgb(184, 184, 184);
 
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 main{

@@ -25,6 +25,9 @@
                         <h5 class="btn btn-primary">View Friends</h5>
                     </a>
                  </div>
+                 <div class="update">
+                     <a href="/user/<%= User._id %>/update"><h5 class="btn btn-primary">Update Profile</h5></a>
+                 </div>
              </nav>
         </div>
         <div class="container">
@@ -69,9 +72,10 @@
             </main>
             <aside class="friendposts">
                     <% for(let i= User.friendPosts.length-1; i > 0; i--){ %>
-                        <div class="post-comp">
-                            <img src="<%= User.friendPosts[i].creatorImg%>" class="usr-img" alt="user">
-                            <p class="post-txt"><%= User.friendPosts[i].content %></p>
+                        <div class="post-comp"><div class="box">
+                                <img src="<%= User.friendPosts[i].creatorImg%>" class="usr-img" alt="user">
+                                    <a href="/user/<%= User.friendPosts[i].creatorID%>"><p class="name"><%= User.friendPosts[i].creatorName%></p></a>
+                            </div><p class="post-txt"><%= User.friendPosts[i].content %></p>
                             <small class="text-muted">Posted:  <%= User.friendPosts[i].date %></small>
                         </div>
                     <% }; %>

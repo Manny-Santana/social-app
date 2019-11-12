@@ -1,0 +1,18 @@
+#brand { 
+    height: 80%;
+    max-width: 70px;
+} 
+.navbar {
+   background: rgb(255, 255, 255);
+   border-radius: 0px;
+   height: 5vh;
+   border-bottom: solid 1px lightgrey;
+   margin: 0px 15px 15px 15px;
+   box-shadow: 0 8px 6px -6px lightgray;
+   display: flex;
+}
+.navbar-brand{
+    padding: 0;
+    height: 100%;
+    max-width: 70px;
+}
