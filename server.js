@@ -4,11 +4,13 @@ const mongoose = require("mongoose");
 const ENV = require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.DB_URL || "mongodb://localhost:27017/MuseApp";
+const MONGODB_URI =
+  process.env.DB_URL ||
+  "mongodb://heroku_jzh77j3k:qhompn3pt198dv1vo3bo3r9bsn@ds063449.mlab.com:63449/heroku_jzh77j3k";
 const db = mongoose.connection;
 const session = require("express-session");
 const methodOverride = require("method-override");
-const SECRET = process.env.SECRET;
+const SECRET = process.env.SECRET || "350zilla";
 const sessionController = require("./controllers/sessions.js");
 const seed = require("./models/seed.js");
 const User = require("./models/user.js");
