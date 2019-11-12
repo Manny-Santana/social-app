@@ -3,8 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const ENV = require("dotenv").config();
 const app = express();
-const PORT = process.env.PORT;
-const dbURI = process.env.DB_URL;
+const PORT = process.env.PORT || 3000;
+const MONGODB_URI = process.env.DB_URL || "mongodb://localhost:27017/MuseApp";
 const db = mongoose.connection;
 const session = require("express-session");
 const methodOverride = require("method-override");
@@ -20,7 +20,7 @@ const userController = require("./controllers/user.js");
 //
 //==========================
 mongoose.connect(
-  dbURI,
+  MONGODB_URI,
   { useUnifiedTopology: true, useNewUrlParser: true },
   () => {
     console.log("connected to mongo...");
